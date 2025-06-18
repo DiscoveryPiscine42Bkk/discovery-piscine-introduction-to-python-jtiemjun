@@ -1,7 +1,8 @@
 import sys
 args = sys.argv[1:]
-if not args :
+if not args:
     print("none")
-print(f"parameters. {len(args)}")
-for arg in args :
-    print(f"{arg} {len(args)}")
+else:
+    print(f"parameters: {len(args)}")
+    for arg in args:
+        print(f"{arg}: {len(arg)}")
