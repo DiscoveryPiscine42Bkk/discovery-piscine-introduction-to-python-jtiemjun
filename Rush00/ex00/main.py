@@ -17,14 +17,14 @@ class TaskManager:
         print("เพิ่มงานเรียบร้อยแล้ว")
     
     def show_all_tasks(self):
-        """แสดงรายการงานทั้งหมด”"""
+        """แสดงรายการงานทั้งหมด"""
         if not self.tasks:
             print("ไม่มีงานในระบบ")
             return
         
-        print("\nรายการงานทั้งหมด”:")
+        print("\nรายการงานทั้งหมด:")
         for i, task in enumerate(self.tasks, 1):
-            print(f"{i}. {task.date} โ€“ {task.name} ({task.task_type})")
+            print(f"{i}. {task.date}- {task.name} ({task.task_type})")
     
     def delete_task(self, task_index: int):
         """ลบงานออกจากระบบ"""
@@ -54,7 +54,7 @@ def display_menu():
     print("สุกี้ตี๋ใหญ่ Task Organizer")
     print("="*40)
     print("1. เพิ่มงานใหม่")
-    print("2. แสดงรายการงานทั้งหมด”")
+    print("2. แสดงรายการงานทั้งหมด")
     print("3. ลบงาน")
     print("4. สรุปจำนวนงานตามประเภท")
     print("5. ออกจากโปรแกรม")
@@ -70,7 +70,7 @@ def main():
         if choice == "1":
             name = input("ชื่องาน: ")
             date = input("วันที่ (dd/mm/yyyy): ")
-            task_type = input("ประเภทงาน (เด็กเสิรฟ์/ล้างจาน/แคชเชียร์/ทำความสะอาด/อื่นๆ):: ")
+            task_type = input("ประเภทงาน (เด็กเสิรฟ์/ล้างจาน/แคชเชียร์/ทำความสะอาด/อื่นๆ): ")
             manager.add_task(name, date, task_type)
         
         elif choice == "2":
